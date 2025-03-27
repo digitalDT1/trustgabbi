@@ -626,11 +626,11 @@ span.t {
 
 /******** end of services page **********/
 .about_container {
-    padding: 80px 0; /* Maintains spacing */
+    padding: 80px 5%; /* Adds responsive padding */
     text-align: center;
     background-color: var(--secondary-color);
     width: 100%;
-    margin: 0 auto;
+    overflow: hidden; /* Prevents any extra scrolling */
 }
 
 .about_container h1 {
@@ -649,6 +649,7 @@ span.t {
     margin: 0 auto;
     opacity: 1;
     transition: opacity 0.8s ease, filter 0.8s ease;
+    overflow: hidden; /* Prevents horizontal scroll issues */
 }
 
 /* Image Styling */
@@ -716,6 +717,10 @@ span.t {
 
 /* 🔹 Responsive for Tablets (iPads) */
 @media screen and (max-width: 1024px) {
+    .about_container {
+        padding: 60px 5%; /* Adjusts spacing */
+    }
+
     .about_content {
         flex-direction: column;
         text-align: center;
@@ -730,13 +735,14 @@ span.t {
     .about_text {
         max-width: 80%;
         font-size: 1.3rem;
+        text-align: center; /* Centers text on smaller screens */
     }
 }
 
 /* 🔹 Responsive for Mobile Phones */
 @media screen and (max-width: 768px) {
     .about_container {
-        width: 100%;
+        padding: 50px 5%; /* Ensures proper spacing */
     }
 
     .about_content {
@@ -753,6 +759,7 @@ span.t {
     .about_text {
         max-width: 90%;
         font-size: 1.2rem;
+        text-align: center;
     }
 
     .about_text button {
