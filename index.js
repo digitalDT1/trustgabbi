@@ -93,3 +93,22 @@ document.addEventListener("DOMContentLoaded", function () {
     checkVisibility(); // Run once to check if it's already in view
 });
 
+///// END OF ABOUT SECTION
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".contact_form form input, .contact_form form textarea, .contact_form form button");
+    
+    function checkScroll() {
+        elements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("scroll-effect");
+            } else {
+                el.classList.remove("scroll-effect");
+            }
+        });
+    }
+    
+    window.addEventListener("scroll", checkScroll);
+    checkScroll();
+});
