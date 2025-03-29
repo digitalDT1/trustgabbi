@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Serif+Khojki:wght@400..700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
     <title>Trustgabbii</title>
 </head>
 <body>
@@ -17,22 +21,22 @@
 
         <nav class="nav_menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </div>
 
     <!----------  END OF NAVBAR  ----------->
-    <div class="hero_container">
+    <div class="hero_container fade-section" id="home">
         <div class="hero_content">
             <h2>Buy & Sell Crypto Instantly with <span class="t">Trust</span><span class="g">Gabbii</span>.</h2>
             <p><span class="t">Trust</span><span class="g">Gabbii</span> makes buying and selling crypto fast, secure, and hassle-free. Get the best 
                 rates, instant transactions, and 24/7 support. Start trading today!
             </p>
-            <button class="hero_btn">Get Started</button>
+            <button aria-label="Get Started" class="hero_btn">Get Started</button>
         </div>
         <div class="hero_img">
             <img src="./images/rocket.png" alt="A Rocket" class="hero_pic">
@@ -42,28 +46,28 @@
 
     <!----------  END OF HERO  ----------->
 
-    <section class="services_container">
+    <section class="services_container fade-section" id="services">
         <h2 style="font-family: 'Noto Serif Khojki', serif">Our Services</h2>
         <div class="services_flex">
             <div class="services_card">
                 <img src="./images/buy.png" alt="Buy Crypto" class="service_pic" width="50">
                 <h3><span class="t">Buy</span> Bitcoin</h3>
                 <p>Purchase Bitcoin instantly with our secure and fast transactions.</p>
-                <button>Buy Now</button>
+                <button aria-label="Buy Now">Buy Now</button>
             </div>
     
-            <div class="services_card">
+            <div class="services_card ">
                 <img src="./images/sell.png" alt="Sell Crypto" class="service_pic" width="50">
                 <h3><span class="t">Sell</span> Bitcoin</h3>
                 <p>Sell your Bitcoin easily with our secure and fast transactions.</p>
-                <button>Sell Now</button>
+                <button aria-label="Sell Now">Sell Now</button>
             </div>
     
             <div class="services_card">
                 <img src="./images/swap.png" alt="Swap Crypto" class="service_pic" width="50">
                 <h3><span class="t">Swap</span> Bitcoin</h3>
                 <p>Exchange Bitcoin with other cryptocurrencies instantly.</p>
-                <button>Swap Now</button>
+                <button aria-label="Swap Now">Swap Now</button>
             </div>
         </div>
 
@@ -74,10 +78,10 @@
 
     <!-------  end of services    -------->
 
-    <div class="about_container">
+    <div class="about_container fade-section" id="about">
         <h1 style="font-family: 'Noto Serif Khojki', serif">About Us</h1>
         <div class="about_content">
-            <img src="./images/rocket.png" class="about_img">
+            <img src="./images/rocket.png" class="about_img" alt="A Rocket">
             <div class="about_text">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Quas rerum commodi esse possimus molestiae at numquam 
@@ -86,14 +90,14 @@
                      Quas rerum commodi esse possimus molestiae at numquam 
                      distinctio ducimus voluptate placeat!
                 </p>
-                <button>Read More</button>
+                <button aria-label="Read More">Read More</button>
             </div>
         </div>
     </div>
 
     <!-------  end of about    -------->
 
-    <div class="contact_container">
+    <div class="contact_container fade-section" id="contact">
         <h2 style="font-family: 'Noto Serif Khojki', serif">Contact Us</h2>
         <div class="contact_form">
             <form>
@@ -101,11 +105,11 @@
                 <input type="text" placeholder="Name" required>
                 <input type="email" placeholder="Email" required>
                 <textarea placeholder="Message" required></textarea>
-                <button type="submit">Submit</button>
+                <button aria-label="Submit" type="submit">Submit</button>
             </form>
             <div class="contact_location">
                 <div class="contact_square">
-                    <img src="./images/rocket.png" alt="" class="contact_img" height="">
+                    <img src="./images/rocket.png" alt="A Rocket" class="contact_img">
                 </div>
             </div>
         </div>
