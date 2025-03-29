@@ -112,3 +112,97 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", checkScroll);
     checkScroll();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollToPlugin); // Register GSAP ScrollTo Plugin
+
+    const links = document.querySelectorAll("nav ul li a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                gsap.to(window, {
+                    duration: 1.5,  // Smooth duration
+                    scrollTo: { y: targetSection, offsetY: 80 }, // Scroll with offset
+                    ease: "power3.out" // Smooth easing
+                });
+            }
+        });
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    // Smooth Scrolling for Navigation
+    const links = document.querySelectorAll("nav ul li a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                gsap.to(window, {
+                    duration: 1.5,
+                    scrollTo: { y: targetSection, offsetY: 50 },
+                    ease: "power3.out"
+                });
+            }
+        });
+    });
+
+    // Hero Section Animation on Load
+    gsap.from("#home", {
+        opacity: 0,
+        y: 50,
+        filter: "blur(10px)",
+        duration: 1.5,
+        ease: "power3.out"
+    });
+
+    // Blur + Fade-in Effect for Sections
+    gsap.utils.toArray(".fade-section").forEach(section => {
+        gsap.from(section, {
+            opacity: 0,
+            y: 100,
+            filter: "blur(10px)",
+            duration: 1.5,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: section,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+    });
+
+    // Parallax Effect on Scroll
+    gsap.to(".hero_img img", {
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".hero_container",
+            start: "top bottom",
+            scrub: true
+        }
+    });
+
+    // Glassmorphism Background Effect
+    document.querySelectorAll(".services_card, .about_container, .contact_container").forEach(el => {
+        el.style.backdropFilter = "blur(10px)";
+        el.style.background = "rgba(255, 255, 255, 0.1)";
+        el.style.borderRadius = "15px";
+        el.style.border = "1px solid rgba(255, 255, 255, 0.2)";
+    });
+
+});
+
